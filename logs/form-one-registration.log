@@ -1,0 +1,25 @@
+2021-03-11 01:34:50.717  INFO 51502 --- [restartedMain] c.d.s.StudentVacancyAllocaterApplication : Starting StudentVacancyAllocaterApplication using Java 11.0.10 on LAPTOP-G73FVSD8 with PID 51502 (/home/tendaizhou/Source_Code/studentvacancyallocater/target/classes started by root in /home/tendaizhou/Source_Code/studentvacancyallocater)
+2021-03-11 01:34:50.719  INFO 51502 --- [restartedMain] c.d.s.StudentVacancyAllocaterApplication : No active profile set, falling back to default profiles: default
+2021-03-11 01:34:50.757  INFO 51502 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-03-11 01:34:50.757  INFO 51502 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-03-11 01:34:51.279  INFO 51502 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-03-11 01:34:51.336  INFO 51502 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 51 ms. Found 6 JPA repository interfaces.
+2021-03-11 01:34:51.757  INFO 51502 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8788 (http)
+2021-03-11 01:34:51.764  INFO 51502 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-03-11 01:34:51.765  INFO 51502 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-03-11 01:34:51.811  INFO 51502 --- [restartedMain] o.a.c.c.C.[.[localhost].[/regSystem]     : Initializing Spring embedded WebApplicationContext
+2021-03-11 01:34:51.812  INFO 51502 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1054 ms
+2021-03-11 01:34:52.071  INFO 51502 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-03-11 01:34:52.118  INFO 51502 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-03-11 01:34:54.931  INFO 51502 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-03-11 01:34:54.960  INFO 51502 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-03-11 01:34:55.321  INFO 51502 --- [actor-system-akka.actor.default-dispatcher-5] akka.event.slf4j.Slf4jLogger             : Slf4jLogger started
+2021-03-11 01:34:55.758  WARN 51502 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-03-11 01:34:55.841  INFO 51502 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-11 01:34:55.948  WARN 51502 --- [restartedMain] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2021-03-11 01:34:56.062  INFO 51502 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8788 (http) with context path '/regSystem'
+2021-03-11 01:34:56.072  INFO 51502 --- [restartedMain] c.d.s.StudentVacancyAllocaterApplication : Started StudentVacancyAllocaterApplication in 5.684 seconds (JVM running for 6.042)
+2021-03-11 01:35:01.541  INFO 51502 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-03-11 01:35:01.542  INFO 51502 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-03-11 01:35:01.545  INFO 51502 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-03-11 01:35:01.551  INFO 51502 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
