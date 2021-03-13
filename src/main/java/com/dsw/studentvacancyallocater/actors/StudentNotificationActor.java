@@ -21,7 +21,7 @@ public class StudentNotificationActor extends AbstractActor {
     }
 
     void getNotification(GetNotification getNotification) {
-        sender().tell(studentNotificationRepository.findById(getNotification.getId()), self());
+        sender().tell(studentNotificationRepository.findById(getNotification.getId()).get(), self());
     }
 
     //message types

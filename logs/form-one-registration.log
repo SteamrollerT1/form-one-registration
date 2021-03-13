@@ -714,3 +714,100 @@ Caused by: org.postgresql.util.PSQLException: FATAL: database "studentvacancyloc
 2021-03-13 03:48:59.368  INFO 49066 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2021-03-13 03:48:59.373  INFO 49066 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2021-03-13 03:48:59.386  INFO 49066 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-03-13 13:25:41.223  INFO 8799 --- [restartedMain] c.d.s.StudentVacancyAllocaterApplication : Starting StudentVacancyAllocaterApplication using Java 11.0.10 on localhost.localdomain with PID 8799 (/home/tendaizhou/Source_Code/form-one-registration/target/classes started by tendaizhou in /home/tendaizhou/Source_Code/form-one-registration)
+2021-03-13 13:25:41.256  INFO 8799 --- [restartedMain] c.d.s.StudentVacancyAllocaterApplication : No active profile set, falling back to default profiles: default
+2021-03-13 13:25:41.343  INFO 8799 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-03-13 13:25:41.344  INFO 8799 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-03-13 13:25:42.651  INFO 8799 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-03-13 13:25:42.708  INFO 8799 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 50 ms. Found 6 JPA repository interfaces.
+2021-03-13 13:25:43.853  INFO 8799 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8788 (http)
+2021-03-13 13:25:43.912  INFO 8799 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-03-13 13:25:43.913  INFO 8799 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-03-13 13:25:44.037  INFO 8799 --- [restartedMain] o.a.c.c.C.[.[localhost].[/regSystem]     : Initializing Spring embedded WebApplicationContext
+2021-03-13 13:25:44.038  INFO 8799 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2693 ms
+2021-03-13 13:25:45.088  INFO 8799 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-03-13 13:25:45.465  INFO 8799 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-03-13 13:25:46.597  INFO 8799 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-03-13 13:25:46.626  INFO 8799 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-03-13 13:25:47.418  INFO 8799 --- [actor-system-akka.actor.default-dispatcher-5] akka.event.slf4j.Slf4jLogger             : Slf4jLogger started
+2021-03-13 13:25:48.017  WARN 8799 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-03-13 13:25:48.115  INFO 8799 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-13 13:25:48.293  WARN 8799 --- [restartedMain] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2021-03-13 13:25:48.489  INFO 8799 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8788 (http) with context path '/regSystem'
+2021-03-13 13:25:48.502  INFO 8799 --- [restartedMain] c.d.s.StudentVacancyAllocaterApplication : Started StudentVacancyAllocaterApplication in 8.153 seconds (JVM running for 9.135)
+2021-03-13 13:34:00.627  INFO 8799 --- [http-nio-8788-exec-1] o.a.c.c.C.[.[localhost].[/regSystem]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-03-13 13:34:00.627  INFO 8799 --- [http-nio-8788-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-03-13 13:34:00.628  INFO 8799 --- [http-nio-8788-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-03-13 13:35:00.055  INFO 8799 --- [actor-system-akka.actor.default-dispatcher-5] c.d.s.actors.StudentActor                : --------------------------  Registered schools --------------------------------
+2021-03-13 13:35:00.082  INFO 8799 --- [actor-system-akka.actor.default-dispatcher-5] c.d.s.actors.StudentActor                : com.dsw.studentvacancyallocater.models.Student@5bcf2155[birthCertificate=0,name=Paul,resultsStatement=0,schools={School(name=Girls College, city=Bulawayo, suburb=CBD, street=9th Avenue, number=23, maxUnitsAllowed=6, applicantCapacity=15),School(name=Girls College, city=Bulawayo, suburb=CBD, street=9th Avenue, number=23, maxUnitsAllowed=6, applicantCapacity=15)},surname=Zuze,units=9,dateCreated=<null>,id=<null>,status=PENDING_APPROVAL,version=<null>]
+2021-03-13 13:35:00.083  INFO 8799 --- [actor-system-akka.actor.default-dispatcher-5] c.d.s.actors.StudentActor                : com.dsw.studentvacancyallocater.models.School@5340a534[applicantCapacity=15,city=Bulawayo,maxUnitsAllowed=6,name=Girls College,number=23,street=9th Avenue,suburb=CBD,dateCreated=2021-03-13 13:34:28.643,id=3,status=ACTIVE,version=0]
+2021-03-13 13:35:00.084  INFO 8799 --- [actor-system-akka.actor.default-dispatcher-5] c.d.s.actors.StudentActor                : com.dsw.studentvacancyallocater.models.School@21eaed44[applicantCapacity=15,city=Bulawayo,maxUnitsAllowed=6,name=Girls College,number=23,street=9th Avenue,suburb=CBD,dateCreated=2021-03-13 13:34:28.085,id=2,status=ACTIVE,version=0]
+2021-03-13 13:35:16.926  INFO 8799 --- [actor-system-akka.actor.default-dispatcher-7] c.d.s.actors.StudentActor                : --------------------------  Registered schools --------------------------------
+2021-03-13 13:35:16.927  INFO 8799 --- [actor-system-akka.actor.default-dispatcher-7] c.d.s.actors.StudentActor                : com.dsw.studentvacancyallocater.models.Student@14e90383[birthCertificate=0,name=Tino,resultsStatement=0,schools={School(name=Girls College, city=Bulawayo, suburb=CBD, street=9th Avenue, number=23, maxUnitsAllowed=6, applicantCapacity=15),School(name=Girls College, city=Bulawayo, suburb=CBD, street=9th Avenue, number=23, maxUnitsAllowed=6, applicantCapacity=15)},surname=Zuze,units=9,dateCreated=<null>,id=<null>,status=PENDING_APPROVAL,version=<null>]
+2021-03-13 13:35:16.928  INFO 8799 --- [actor-system-akka.actor.default-dispatcher-7] c.d.s.actors.StudentActor                : com.dsw.studentvacancyallocater.models.School@4ce6497b[applicantCapacity=15,city=Bulawayo,maxUnitsAllowed=6,name=Girls College,number=23,street=9th Avenue,suburb=CBD,dateCreated=2021-03-13 13:34:28.643,id=3,status=ACTIVE,version=0]
+2021-03-13 13:35:16.929  INFO 8799 --- [actor-system-akka.actor.default-dispatcher-7] c.d.s.actors.StudentActor                : com.dsw.studentvacancyallocater.models.School@38a744a9[applicantCapacity=15,city=Bulawayo,maxUnitsAllowed=6,name=Girls College,number=23,street=9th Avenue,suburb=CBD,dateCreated=2021-03-13 13:34:28.085,id=2,status=ACTIVE,version=0]
+2021-03-13 13:35:27.536  INFO 8799 --- [actor-system-akka.actor.default-dispatcher-7] c.d.s.actors.StudentActor                : --------------------------  Registered schools --------------------------------
+2021-03-13 13:35:27.537  INFO 8799 --- [actor-system-akka.actor.default-dispatcher-7] c.d.s.actors.StudentActor                : com.dsw.studentvacancyallocater.models.Student@12f4befa[birthCertificate=0,name=Tonde,resultsStatement=0,schools={School(name=Girls College, city=Bulawayo, suburb=CBD, street=9th Avenue, number=23, maxUnitsAllowed=6, applicantCapacity=15),School(name=Girls College, city=Bulawayo, suburb=CBD, street=9th Avenue, number=23, maxUnitsAllowed=6, applicantCapacity=15),School(name=Girls College, city=Bulawayo, suburb=CBD, street=9th Avenue, number=23, maxUnitsAllowed=6, applicantCapacity=15)},surname=Zuze,units=9,dateCreated=<null>,id=<null>,status=PENDING_APPROVAL,version=<null>]
+2021-03-13 13:35:27.538  INFO 8799 --- [actor-system-akka.actor.default-dispatcher-7] c.d.s.actors.StudentActor                : com.dsw.studentvacancyallocater.models.School@d7e11be[applicantCapacity=15,city=Bulawayo,maxUnitsAllowed=6,name=Girls College,number=23,street=9th Avenue,suburb=CBD,dateCreated=2021-03-13 13:34:28.643,id=3,status=ACTIVE,version=0]
+2021-03-13 13:35:27.539  INFO 8799 --- [actor-system-akka.actor.default-dispatcher-7] c.d.s.actors.StudentActor                : com.dsw.studentvacancyallocater.models.School@3c6216ec[applicantCapacity=15,city=Bulawayo,maxUnitsAllowed=6,name=Girls College,number=23,street=9th Avenue,suburb=CBD,dateCreated=2021-03-13 13:34:28.085,id=2,status=ACTIVE,version=0]
+2021-03-13 13:35:27.539  INFO 8799 --- [actor-system-akka.actor.default-dispatcher-7] c.d.s.actors.StudentActor                : com.dsw.studentvacancyallocater.models.School@6feb5b5b[applicantCapacity=15,city=Bulawayo,maxUnitsAllowed=6,name=Girls College,number=23,street=9th Avenue,suburb=CBD,dateCreated=2021-03-13 13:34:24.529,id=1,status=ACTIVE,version=0]
+2021-03-13 13:44:35.787 ERROR 8799 --- [http-nio-8788-exec-4] o.a.c.c.C.[.[.[.[dispatcherServlet]      : Servlet.service() for servlet [dispatcherServlet] in context with path [/regSystem] threw exception [Request processing failed; nested exception is java.lang.ClassCastException: class java.util.Optional cannot be cast to class com.dsw.studentvacancyallocater.models.StudentNotification (java.util.Optional is in module java.base of loader 'bootstrap'; com.dsw.studentvacancyallocater.models.StudentNotification is in unnamed module of loader org.springframework.boot.devtools.restart.classloader.RestartClassLoader @38e7910b)] with root cause
+
+java.lang.ClassCastException: class java.util.Optional cannot be cast to class com.dsw.studentvacancyallocater.models.StudentNotification (java.util.Optional is in module java.base of loader 'bootstrap'; com.dsw.studentvacancyallocater.models.StudentNotification is in unnamed module of loader org.springframework.boot.devtools.restart.classloader.RestartClassLoader @38e7910b)
+	at com.dsw.studentvacancyallocater.services.impl.StudentServiceImpl.readNotification(StudentServiceImpl.java:118) ~[classes/:na]
+	at com.dsw.studentvacancyallocater.controllers.StudentController.readNotification(StudentController.java:63) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:197) ~[spring-web-5.3.2.jar:5.3.2]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:141) ~[spring-web-5.3.2.jar:5.3.2]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106) ~[spring-webmvc-5.3.2.jar:5.3.2]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:894) ~[spring-webmvc-5.3.2.jar:5.3.2]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.2.jar:5.3.2]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.2.jar:5.3.2]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1061) ~[spring-webmvc-5.3.2.jar:5.3.2]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:961) ~[spring-webmvc-5.3.2.jar:5.3.2]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.2.jar:5.3.2]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909) ~[spring-webmvc-5.3.2.jar:5.3.2]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:652) ~[tomcat-embed-core-9.0.41.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.2.jar:5.3.2]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733) ~[tomcat-embed-core-9.0.41.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.2.jar:5.3.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.2.jar:5.3.2]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.2.jar:5.3.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.2.jar:5.3.2]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.2.jar:5.3.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.2.jar:5.3.2]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:888) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1597) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[na:na]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at java.base/java.lang.Thread.run(Thread.java:834) ~[na:na]
+
+2021-03-13 13:45:49.457  INFO 8799 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-03-13 13:45:49.459  INFO 8799 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-03-13 13:45:49.517  INFO 8799 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-03-13 13:45:49.526  INFO 8799 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
