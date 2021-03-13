@@ -30,7 +30,6 @@ public class ApplicationResultsActor extends AbstractActor {
     @Autowired
     private ApplicationResultsRepository applicationResultsRepository;
 
-
     //actor behavior
     void storeApplicationResults(StoreApplicationResults applicationResults) {
         applicationResultsRepository.save(applicationResults.getApplicationResult());

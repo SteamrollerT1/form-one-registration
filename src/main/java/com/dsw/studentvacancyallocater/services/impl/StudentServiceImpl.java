@@ -5,11 +5,10 @@ import akka.actor.ActorSystem;
 import akka.pattern.Patterns;
 import akka.util.Timeout;
 import com.dsw.studentvacancyallocater.actors.StudentActor;
+import com.dsw.studentvacancyallocater.actors.StudentNotificationActor;
 import com.dsw.studentvacancyallocater.configs.SpringProps;
 import com.dsw.studentvacancyallocater.dtos.ResponseDTO;
 import com.dsw.studentvacancyallocater.dtos.StudentDTO;
-import com.dsw.studentvacancyallocater.enums.EntityStatus;
-import com.dsw.studentvacancyallocater.enums.NotificationStatus;
 import com.dsw.studentvacancyallocater.models.Student;
 import com.dsw.studentvacancyallocater.models.StudentNotification;
 import com.dsw.studentvacancyallocater.repositories.StudentNotificationRepository;
@@ -108,16 +107,40 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public void readNotification(long id) {
-        StudentNotification notification = studentNotificationRepository.findById(id).get();
-        notification.setStatus(NotificationStatus.READ.name());
-        studentNotificationRepository.save(notification);
+        ActorRef studentActor = actorSystem.actorOf(SpringProps.create(actorSystem, StudentActor.class));
+
+        ActorRef notificationActor = actorSystem.actorOf(SpringProps.create(actorSystem, StudentNotificationActor.class));
+        StudentNotificationActor.GetNotification getNotification = new StudentNotificationActor.GetNotification(id);
+        Timeout timeout = new Timeout(Duration.create(5, "seconds"));
+        Future<Object> future = Patterns.ask(notificationActor, getNotification, timeout);
+
+        try {
+            StudentActor.ReadNotification notification = new StudentActor.ReadNotification((StudentNotification) Await.result(future, timeout.duration()));
+            studentActor.tell(notification, ActorRef.noSender());
+
+        } catch (TimeoutException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+
     }
 
     @Override
     public Student suspend(long id) {
-        Student student = studentRepository.findById(id).get();
-        student.setStatus(EntityStatus.SUSPENDED.name());
-        return studentRepository.save(student);
+        ActorRef studentActor = actorSystem.actorOf(SpringProps.create(actorSystem, StudentActor.class));
+        StudentActor.Suspend suspend = new StudentActor.Suspend(getStudentByIdSync(id));
+        Timeout timeout = new Timeout(Duration.create(5, "seconds"));
+        Future<Object> future = Patterns.ask(studentActor, suspend, timeout);
+        try {
+            return (Student) Await.result(future, timeout.duration());
+        } catch (TimeoutException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
 }

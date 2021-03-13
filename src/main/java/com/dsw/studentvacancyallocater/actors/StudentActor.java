@@ -5,6 +5,7 @@ import akka.actor.ActorRef;
 import akka.actor.ActorSystem;
 import com.dsw.studentvacancyallocater.annotations.Actor;
 import com.dsw.studentvacancyallocater.configs.SpringProps;
+import com.dsw.studentvacancyallocater.enums.EntityStatus;
 import com.dsw.studentvacancyallocater.enums.NotificationStatus;
 import com.dsw.studentvacancyallocater.models.School;
 import com.dsw.studentvacancyallocater.models.Student;
@@ -101,6 +102,29 @@ public class StudentActor extends AbstractActor {
         notificationActor.tell(notify, self());
     }
 
+    void readNotification(ReadNotification readNotification) {
+        StudentNotification notification = readNotification.getNotification();
+        notification.setStatus(NotificationStatus.READ.name());
+        studentNotificationRepository.save(notification);
+    }
+
+    void suspend(Suspend suspend) {
+        Student student = suspend.getStudent();
+        student.setStatus(EntityStatus.SUSPENDED.name());
+        student = studentRepository.save(student);
+
+        //send notification to student
+        ActorRef studentNotificationActor = actorSystem.actorOf(SpringProps.create(actorSystem, StudentNotificationActor.class));
+        StudentNotification studentNotification = new StudentNotification();
+        studentNotification.setStudent(student);
+        studentNotification.setNarrative("Your account has been suspended. ");
+        studentNotification.setStatus(NotificationStatus.CREATED.name());
+        StudentNotificationActor.Notify notifyStudent = new StudentNotificationActor.Notify(studentNotification);
+        studentNotificationActor.tell(notifyStudent, self());
+
+        sender().tell(student, self());
+    }
+
     //message types
     interface Command {
     }
@@ -141,6 +165,16 @@ public class StudentActor extends AbstractActor {
         private final Student student;
     }
 
+    @Data
+    public static class ReadNotification implements Command {
+        private final StudentNotification notification;
+    }
+
+    @Data
+    public static class Suspend implements Command {
+        private final Student student;
+    }
+
     @Override
     public Receive createReceive() {
         return receiveBuilder()
@@ -149,6 +183,8 @@ public class StudentActor extends AbstractActor {
                 .match(GetStudentsBySchoolId.class, this::getStudentsBySchoolId)
                 .match(RegisterStudent.class, this::registerStudent)
                 .match(GetById.class, this::getById)
+                .match(ReadNotification.class, this::readNotification)
+                .match(Suspend.class, this::suspend)
                 .build();
     }
 }

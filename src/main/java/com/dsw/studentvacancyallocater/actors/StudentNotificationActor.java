@@ -2,7 +2,6 @@ package com.dsw.studentvacancyallocater.actors;
 
 import akka.actor.AbstractActor;
 import com.dsw.studentvacancyallocater.annotations.Actor;
-import com.dsw.studentvacancyallocater.models.Notification;
 import com.dsw.studentvacancyallocater.models.StudentNotification;
 import com.dsw.studentvacancyallocater.repositories.StudentNotificationRepository;
 import lombok.Data;
@@ -21,6 +20,10 @@ public class StudentNotificationActor extends AbstractActor {
         studentNotificationRepository.save(notify.getNotification());
     }
 
+    void getNotification(GetNotification getNotification) {
+        sender().tell(studentNotificationRepository.findById(getNotification.getId()), self());
+    }
+
     //message types
     interface Command {
     }
@@ -31,10 +34,17 @@ public class StudentNotificationActor extends AbstractActor {
     }
 
 
+    @Data
+    public static class GetNotification implements Command {
+        private final long id;
+    }
+
+
     @Override
     public Receive createReceive() {
         return receiveBuilder()
                 .match(Notify.class, this::notify)
+                .match(GetNotification.class, this::getNotification)
                 .build();
     }
 }
