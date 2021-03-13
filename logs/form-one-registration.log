@@ -1377,3 +1377,53 @@ Caused by: org.hibernate.PersistentObjectException: detached entity passed to pe
 2021-03-13 16:42:21.506  INFO 10899 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2021-03-13 16:42:21.508  INFO 10899 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2021-03-13 16:42:21.517  INFO 10899 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-03-13 23:33:25.802  INFO 9914 --- [restartedMain] c.d.s.StudentVacancyAllocaterApplication : Starting StudentVacancyAllocaterApplication using Java 11.0.10 on LAPTOP-G73FVSD8 with PID 9914 (/home/tendaizhou/Source_Code/form-one-registration/target/classes started by tendaizhou in /home/tendaizhou/Source_Code/form-one-registration)
+2021-03-13 23:33:25.829  INFO 9914 --- [restartedMain] c.d.s.StudentVacancyAllocaterApplication : No active profile set, falling back to default profiles: default
+2021-03-13 23:33:26.120  INFO 9914 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-03-13 23:33:26.121  INFO 9914 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-03-13 23:33:27.542  INFO 9914 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-03-13 23:33:27.649  INFO 9914 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 87 ms. Found 7 JPA repository interfaces.
+2021-03-13 23:33:28.365  INFO 9914 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8788 (http)
+2021-03-13 23:33:28.373  INFO 9914 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-03-13 23:33:28.373  INFO 9914 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-03-13 23:33:28.431  INFO 9914 --- [restartedMain] o.a.c.c.C.[.[localhost].[/regSystem]     : Initializing Spring embedded WebApplicationContext
+2021-03-13 23:33:28.432  INFO 9914 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2309 ms
+2021-03-13 23:33:29.212  INFO 9914 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-03-13 23:33:29.992  INFO 9914 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-03-13 23:33:31.618  INFO 9914 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-03-13 23:33:31.738  INFO 9914 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-03-13 23:33:32.844  INFO 9914 --- [actor-system-akka.actor.default-dispatcher-5] akka.event.slf4j.Slf4jLogger             : Slf4jLogger started
+2021-03-13 23:33:34.256  WARN 9914 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-03-13 23:33:34.519  INFO 9914 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-13 23:33:34.668  WARN 9914 --- [restartedMain] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2021-03-13 23:33:34.935  INFO 9914 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8788 (http) with context path '/regSystem'
+2021-03-13 23:33:35.411  INFO 9914 --- [restartedMain] c.d.s.StudentVacancyAllocaterApplication : Started StudentVacancyAllocaterApplication in 9.891 seconds (JVM running for 10.553)
+2021-03-13 23:33:42.079  INFO 9914 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-03-13 23:33:42.094  INFO 9914 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-03-13 23:33:42.124  INFO 9914 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-03-13 23:33:42.131  INFO 9914 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-03-13 23:33:52.890  INFO 10056 --- [restartedMain] c.d.s.StudentVacancyAllocaterApplication : Starting StudentVacancyAllocaterApplication using Java 11.0.10 on LAPTOP-G73FVSD8 with PID 10056 (/home/tendaizhou/Source_Code/form-one-registration/target/classes started by tendaizhou in /home/tendaizhou/Source_Code/form-one-registration)
+2021-03-13 23:33:52.892  INFO 10056 --- [restartedMain] c.d.s.StudentVacancyAllocaterApplication : No active profile set, falling back to default profiles: default
+2021-03-13 23:33:52.937  INFO 10056 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-03-13 23:33:52.938  INFO 10056 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-03-13 23:33:53.697  INFO 10056 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-03-13 23:33:53.756  INFO 10056 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 53 ms. Found 7 JPA repository interfaces.
+2021-03-13 23:33:54.208  INFO 10056 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8788 (http)
+2021-03-13 23:33:54.214  INFO 10056 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-03-13 23:33:54.215  INFO 10056 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-03-13 23:33:54.261  INFO 10056 --- [restartedMain] o.a.c.c.C.[.[localhost].[/regSystem]     : Initializing Spring embedded WebApplicationContext
+2021-03-13 23:33:54.262  INFO 10056 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1323 ms
+2021-03-13 23:33:54.528  INFO 10056 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-03-13 23:33:54.755  INFO 10056 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-03-13 23:33:55.437  INFO 10056 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-03-13 23:33:55.455  INFO 10056 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-03-13 23:33:55.850  INFO 10056 --- [actor-system-akka.actor.default-dispatcher-5] akka.event.slf4j.Slf4jLogger             : Slf4jLogger started
+2021-03-13 23:33:56.515  WARN 10056 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-03-13 23:33:56.685  INFO 10056 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-13 23:33:56.765  WARN 10056 --- [restartedMain] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2021-03-13 23:33:56.940  INFO 10056 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8788 (http) with context path '/regSystem'
+2021-03-13 23:33:57.278  INFO 10056 --- [restartedMain] c.d.s.StudentVacancyAllocaterApplication : Started StudentVacancyAllocaterApplication in 4.76 seconds (JVM running for 5.157)
+2021-03-13 23:34:28.904  INFO 10056 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-03-13 23:34:28.910  INFO 10056 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-03-13 23:34:28.914  INFO 10056 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-03-13 23:34:28.920  INFO 10056 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
