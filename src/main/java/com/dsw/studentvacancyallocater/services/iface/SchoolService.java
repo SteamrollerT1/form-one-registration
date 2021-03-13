@@ -20,6 +20,7 @@ public interface SchoolService {
     long getNumOfAcceptedStudentsBySchoolId(long schoolId);
 
     School getByIdSync(long id);
+    School suspend(long id);
 
     List<School> getAll();
 

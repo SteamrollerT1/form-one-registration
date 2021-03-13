@@ -119,6 +119,13 @@ public class SchoolServiceImpl implements SchoolService {
     }
 
     @Override
+    public School suspend(long id) {
+        School school = schoolRepository.findById(id).get();
+        school.setStatus(EntityStatus.SUSPENDED.name());
+        return schoolRepository.save(school);
+    }
+
+    @Override
     public List<School> getAll() {
         ActorRef schoolActor = actorSystem.actorOf(SpringProps.create(actorSystem, SchoolActor.class));
         Timeout timeout = new Timeout(Duration.create(5, "seconds"));

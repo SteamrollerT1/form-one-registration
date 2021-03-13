@@ -19,4 +19,6 @@ public interface StudentService {
     List<StudentNotification> getStudentNotificationsByStudentId(long studentId);
 
     List<Student> getAllStudents();
+    void readNotification(long id);
+    Student suspend(long id);
 }

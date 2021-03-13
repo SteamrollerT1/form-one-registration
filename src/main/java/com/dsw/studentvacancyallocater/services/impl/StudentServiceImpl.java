@@ -8,6 +8,8 @@ import com.dsw.studentvacancyallocater.actors.StudentActor;
 import com.dsw.studentvacancyallocater.configs.SpringProps;
 import com.dsw.studentvacancyallocater.dtos.ResponseDTO;
 import com.dsw.studentvacancyallocater.dtos.StudentDTO;
+import com.dsw.studentvacancyallocater.enums.EntityStatus;
+import com.dsw.studentvacancyallocater.enums.NotificationStatus;
 import com.dsw.studentvacancyallocater.models.Student;
 import com.dsw.studentvacancyallocater.models.StudentNotification;
 import com.dsw.studentvacancyallocater.repositories.StudentNotificationRepository;
@@ -102,6 +104,20 @@ public class StudentServiceImpl implements StudentService {
             e.printStackTrace();
         }
         return null;
+    }
+
+    @Override
+    public void readNotification(long id) {
+        StudentNotification notification = studentNotificationRepository.findById(id).get();
+        notification.setStatus(NotificationStatus.READ.name());
+        studentNotificationRepository.save(notification);
+    }
+
+    @Override
+    public Student suspend(long id) {
+        Student student = studentRepository.findById(id).get();
+        student.setStatus(EntityStatus.SUSPENDED.name());
+        return studentRepository.save(student);
     }
 
 }

@@ -6,6 +6,7 @@ import com.dsw.studentvacancyallocater.models.Student;
 import com.dsw.studentvacancyallocater.models.StudentNotification;
 import com.dsw.studentvacancyallocater.services.iface.SchoolService;
 import com.dsw.studentvacancyallocater.services.iface.StudentService;
+import com.dsw.studentvacancyallocater.utilities.Codes;
 import com.dsw.studentvacancyallocater.utilities.DTOToModelConvertor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -53,6 +54,20 @@ public class StudentController {
     @ResponseBody
     List<Student> getAllBySchoolId() {
         return studentService.getAllStudents();
+    }
+
+
+    @PostMapping("/readNotification/{id}")
+    @ResponseBody
+    void readNotification(@PathVariable String id) {
+        studentService.readNotification(Long.parseLong(id));
+    }
+
+    @PostMapping("/suspend/{id}")
+    @ResponseBody
+    ResponseDTO suspend(@PathVariable String id) {
+        studentService.suspend(Long.parseLong(id));
+        return new ResponseDTO("Student with id " + id + " has been suspended", Codes.generalSuccess);
     }
 
 }

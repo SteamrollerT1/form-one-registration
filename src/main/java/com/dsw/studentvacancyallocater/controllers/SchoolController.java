@@ -1,9 +1,13 @@
 package com.dsw.studentvacancyallocater.controllers;
 
-import com.dsw.studentvacancyallocater.dtos.*;
+import com.dsw.studentvacancyallocater.dtos.AcceptStudentDTO;
+import com.dsw.studentvacancyallocater.dtos.RejectStudentDTO;
+import com.dsw.studentvacancyallocater.dtos.ResponseDTO;
+import com.dsw.studentvacancyallocater.dtos.SchoolDTO;
 import com.dsw.studentvacancyallocater.models.School;
 import com.dsw.studentvacancyallocater.services.iface.SchoolService;
 import com.dsw.studentvacancyallocater.services.iface.StudentService;
+import com.dsw.studentvacancyallocater.utilities.Codes;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -54,6 +58,13 @@ public class SchoolController {
     @ResponseBody
     List<School> getByAll() {
         return schoolService.getAll();
+    }
+
+    @PostMapping("/suspend/{id}")
+    @ResponseBody
+    ResponseDTO suspend(@PathVariable String id) {
+        schoolService.suspend(Long.parseLong(id));
+        return new ResponseDTO("School with id : " + id + " has been suspended", Codes.generalSuccess);
     }
 
 }
