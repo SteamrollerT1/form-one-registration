@@ -1,9 +1,6 @@
 package com.dsw.studentvacancyallocater.controllers;
 
-import com.dsw.studentvacancyallocater.dtos.AcceptStudentDTO;
-import com.dsw.studentvacancyallocater.dtos.RejectStudentDTO;
-import com.dsw.studentvacancyallocater.dtos.ResponseDTO;
-import com.dsw.studentvacancyallocater.dtos.SchoolDTO;
+import com.dsw.studentvacancyallocater.dtos.*;
 import com.dsw.studentvacancyallocater.models.School;
 import com.dsw.studentvacancyallocater.services.iface.SchoolService;
 import com.dsw.studentvacancyallocater.services.iface.StudentService;
@@ -65,6 +62,19 @@ public class SchoolController {
     ResponseDTO suspend(@PathVariable String id) {
         schoolService.suspend(Long.parseLong(id));
         return new ResponseDTO("School with id : " + id + " has been suspended", Codes.generalSuccess);
+    }
+
+
+    @PostMapping("/openRegistrationPeriod")
+    @ResponseBody
+    ResponseDTO openRegistrationPeriod(@RequestBody DeadlineDTO dto) {
+        return schoolService.openRegistration(dto);
+    }
+
+    @PostMapping("/closeRegistrationPeriod")
+    @ResponseBody
+    ResponseDTO closeRegistrationPeriod(@RequestBody DeadlineDTO dto) {
+        return schoolService.closeRegistration(dto);
     }
 
 }

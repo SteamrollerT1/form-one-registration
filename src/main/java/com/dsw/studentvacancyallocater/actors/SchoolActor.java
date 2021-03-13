@@ -6,10 +6,13 @@ import akka.actor.ActorSystem;
 import com.dsw.studentvacancyallocater.annotations.Actor;
 import com.dsw.studentvacancyallocater.configs.SpringProps;
 import com.dsw.studentvacancyallocater.enums.ApplicationStatus;
+import com.dsw.studentvacancyallocater.enums.DeadlineStatus;
 import com.dsw.studentvacancyallocater.models.ApplicationResult;
+import com.dsw.studentvacancyallocater.models.Deadline;
 import com.dsw.studentvacancyallocater.models.School;
 import com.dsw.studentvacancyallocater.models.Student;
 import com.dsw.studentvacancyallocater.repositories.ApplicationResultsRepository;
+import com.dsw.studentvacancyallocater.repositories.DeadlineRepository;
 import com.dsw.studentvacancyallocater.repositories.SchoolRepository;
 import com.dsw.studentvacancyallocater.repositories.StudentRepository;
 import lombok.AllArgsConstructor;
@@ -29,6 +32,9 @@ public class SchoolActor extends AbstractActor {
     private StudentRepository studentRepository;
 
     @Autowired
+    private DeadlineRepository deadlineRepository;
+
+    @Autowired
     private ActorSystem actorSystem;
 
     @Autowired
@@ -37,6 +43,9 @@ public class SchoolActor extends AbstractActor {
 
     //actor behavior
     void registerSchool(RegisterSchool register) {
+        Deadline deadline = new Deadline();
+        deadline.setStatus(DeadlineStatus.CLOSED.name());
+        register.getSchool().setDeadline(deadlineRepository.save(deadline));
         schoolRepository.save(register.getSchool());
         //TODO Tell notification actor that school registered successfully
     }

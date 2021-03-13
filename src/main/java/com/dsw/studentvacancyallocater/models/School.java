@@ -2,8 +2,7 @@ package com.dsw.studentvacancyallocater.models;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Data
 @Entity
@@ -16,5 +15,9 @@ public class School extends AbstractEntity {
     private String number;
     private int maxUnitsAllowed;
     private int applicantCapacity;
+
+    @OneToOne(targetEntity = Deadline.class, mappedBy = "school", cascade = CascadeType.ALL)
+    @PrimaryKeyJoinColumn
+    private Deadline deadline;
 
 }

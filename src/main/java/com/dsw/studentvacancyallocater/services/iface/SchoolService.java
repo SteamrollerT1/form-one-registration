@@ -1,9 +1,6 @@
 package com.dsw.studentvacancyallocater.services.iface;
 
-import com.dsw.studentvacancyallocater.dtos.AcceptStudentDTO;
-import com.dsw.studentvacancyallocater.dtos.RejectStudentDTO;
-import com.dsw.studentvacancyallocater.dtos.ResponseDTO;
-import com.dsw.studentvacancyallocater.dtos.SchoolDTO;
+import com.dsw.studentvacancyallocater.dtos.*;
 import com.dsw.studentvacancyallocater.models.School;
 
 import java.util.List;
@@ -15,11 +12,16 @@ public interface SchoolService {
 
     ResponseDTO acceptStudent(AcceptStudentDTO dto);
 
+    ResponseDTO openRegistration(DeadlineDTO dto);
+
+    ResponseDTO closeRegistration(DeadlineDTO dto);
+
     School getByIdAsync(String id);
 
     long getNumOfAcceptedStudentsBySchoolId(long schoolId);
 
     School getByIdSync(long id);
+
     School suspend(long id);
 
     List<School> getAll();

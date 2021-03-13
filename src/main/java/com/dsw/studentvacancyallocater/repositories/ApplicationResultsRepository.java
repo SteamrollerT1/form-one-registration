@@ -10,12 +10,12 @@ import java.util.List;
 
 @Repository
 public interface ApplicationResultsRepository extends JpaRepository<ApplicationResult, Long> {
-    @Query("SELECT ar FROM ApplicationResult ar JOIN ar.school sc WHERE sc.id = :schoolId")
+    @Query("SELECT ar FROM ApplicationResult ar JOIN ar.school sc WHERE sc.id = :schoolId ORDER BY ar.dateCreated ASC")
     List<ApplicationResult> getBySchoolId(@Param("schoolId") long schoolId);
 
-    @Query("SELECT ar FROM ApplicationResult ar JOIN ar.student st WHERE st.id = :studentId")
+    @Query("SELECT ar FROM ApplicationResult ar JOIN ar.student st WHERE st.id = :studentId ORDER BY ar.dateCreated ASC")
     List<ApplicationResult> getByStudentId(@Param("studentId") long studentId);
 
-    @Query("SELECT ar FROM ApplicationResult ar JOIN ar.school sc JOIN ar.student st WHERE sc.id = :schoolId AND st.id = :studentId")
+    @Query("SELECT ar FROM ApplicationResult ar JOIN ar.school sc JOIN ar.student st WHERE sc.id = :schoolId AND st.id = :studentId ORDER BY ar.dateCreated ASC")
     ApplicationResult getByStudentIdAndSchoolId(@Param("studentId") long studentId, @Param("schoolId") long schoolId);
 }

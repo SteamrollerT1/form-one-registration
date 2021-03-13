@@ -6,10 +6,7 @@ import akka.pattern.Patterns;
 import akka.util.Timeout;
 import com.dsw.studentvacancyallocater.actors.SchoolActor;
 import com.dsw.studentvacancyallocater.configs.SpringProps;
-import com.dsw.studentvacancyallocater.dtos.AcceptStudentDTO;
-import com.dsw.studentvacancyallocater.dtos.RejectStudentDTO;
-import com.dsw.studentvacancyallocater.dtos.ResponseDTO;
-import com.dsw.studentvacancyallocater.dtos.SchoolDTO;
+import com.dsw.studentvacancyallocater.dtos.*;
 import com.dsw.studentvacancyallocater.enums.EntityStatus;
 import com.dsw.studentvacancyallocater.models.School;
 import com.dsw.studentvacancyallocater.models.Student;
@@ -74,6 +71,16 @@ public class SchoolServiceImpl implements SchoolService {
         SchoolActor.AcceptStudent acceptStudent = new SchoolActor.AcceptStudent(school, student, dto.getNarrative());
         schoolActor.tell(acceptStudent, ActorRef.noSender());
         return new ResponseDTO("Student application processing initiated. You will be notified when its complete.", Codes.generalSuccess);
+    }
+
+    @Override
+    public ResponseDTO openRegistration(DeadlineDTO dto) {
+        return null;
+    }
+
+    @Override
+    public ResponseDTO closeRegistration(DeadlineDTO dto) {
+        return null;
     }
 
     @Override
