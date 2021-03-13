@@ -15,8 +15,10 @@ import com.dsw.studentvacancyallocater.models.School;
 import com.dsw.studentvacancyallocater.models.Student;
 import com.dsw.studentvacancyallocater.repositories.SchoolRepository;
 import com.dsw.studentvacancyallocater.repositories.StudentRepository;
+import com.dsw.studentvacancyallocater.services.iface.ApplicationResultsService;
 import com.dsw.studentvacancyallocater.services.iface.SchoolService;
 import com.dsw.studentvacancyallocater.services.iface.StudentService;
+import com.dsw.studentvacancyallocater.utilities.Codes;
 import com.dsw.studentvacancyallocater.utilities.DTOToModelConvertor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -45,6 +47,9 @@ public class SchoolServiceImpl implements SchoolService {
     @Autowired
     private StudentService studentService;
 
+    @Autowired
+    private ApplicationResultsService applicationResultsService;
+
 
     @Override
     public ResponseDTO registerSchool(SchoolDTO dto) {
@@ -58,27 +63,32 @@ public class SchoolServiceImpl implements SchoolService {
 
     @Override
     public ResponseDTO acceptStudent(AcceptStudentDTO dto) {
-        ActorRef schoolActor = actorSystem.actorOf(SpringProps.create(actorSystem, SchoolActor.class));
+        if (applicationResultsService.getByStudentIdAndSchoolId(Long.parseLong(dto.getStudentId()), Long.parseLong(dto.getSchoolId())) != null)
+            return new ResponseDTO("Student application has already benn responded to.", Codes.generalError);
 
-        School school = schoolRepository.findById(Long.parseLong(dto.getSchoolId())).get();
+
         Student student = studentService.getStudentByIdSync(Long.parseLong(dto.getStudentId()));
+        School school = schoolRepository.findById(Long.parseLong(dto.getSchoolId())).get();
 
+        ActorRef schoolActor = actorSystem.actorOf(SpringProps.create(actorSystem, SchoolActor.class));
         SchoolActor.AcceptStudent acceptStudent = new SchoolActor.AcceptStudent(school, student, dto.getNarrative());
         schoolActor.tell(acceptStudent, ActorRef.noSender());
-        return new ResponseDTO("Student application processing initiated. You will be notified when its complete.", "00");
+        return new ResponseDTO("Student application processing initiated. You will be notified when its complete.", Codes.generalSuccess);
     }
 
     @Override
     public ResponseDTO rejectStudent(RejectStudentDTO dto) {
-        ActorRef schoolActor = actorSystem.actorOf(SpringProps.create(actorSystem, SchoolActor.class));
+        if (applicationResultsService.getByStudentIdAndSchoolId(Long.parseLong(dto.getStudentId()), Long.parseLong(dto.getSchoolId())) != null)
+            return new ResponseDTO("Student application has already benn responded to.", Codes.generalError);
 
         School school = schoolRepository.findById(Long.parseLong(dto.getSchoolId())).get();
         Student student = studentService.getStudentByIdSync(Long.parseLong(dto.getStudentId()));
 
+        ActorRef schoolActor = actorSystem.actorOf(SpringProps.create(actorSystem, SchoolActor.class));
         SchoolActor.RejectedStudent rejectedStudent = new SchoolActor.RejectedStudent(school, student, dto.getNarrative());
 
         schoolActor.tell(rejectedStudent, ActorRef.noSender());
-        return new ResponseDTO("Student application processing initiated. You will be notified when its complete.", "00");
+        return new ResponseDTO("Student application processing initiated. You will be notified when its complete.", Codes.generalSuccess);
     }
 
 
