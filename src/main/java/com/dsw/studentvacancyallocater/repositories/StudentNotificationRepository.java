@@ -10,6 +10,6 @@ import java.util.List;
 
 @Repository
 public interface StudentNotificationRepository extends JpaRepository<StudentNotification, Long> {
-    @Query("SELECT sn FROM StudentNotification sn JOIN sn.student st WHERE st.id = :studentId ORDER BY sn.dateCreated DESC")
+    @Query("SELECT sn FROM StudentNotification sn JOIN sn.student st WHERE st.id = :studentId ORDER BY sn.dateCreated ASC")
     List<StudentNotification> getStudentNotificationsByStudentId(@Param("studentId") long studentId);
 }
