@@ -45,8 +45,9 @@ public class SchoolActor extends AbstractActor {
     void registerSchool(RegisterSchool register) {
         Deadline deadline = new Deadline();
         deadline.setStatus(DeadlineStatus.CLOSED.name());
-        register.getSchool().setDeadline(deadlineRepository.save(deadline));
-        schoolRepository.save(register.getSchool());
+        deadline.setSchool(register.getSchool());
+        deadlineRepository.save(deadline);
+
         //TODO Tell notification actor that school registered successfully
     }
 

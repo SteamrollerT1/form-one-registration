@@ -811,3 +811,256 @@ java.lang.ClassCastException: class java.util.Optional cannot be cast to class c
 2021-03-13 13:45:49.459  INFO 8799 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2021-03-13 13:45:49.517  INFO 8799 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2021-03-13 13:45:49.526  INFO 8799 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-03-13 15:35:25.963  INFO 5871 --- [restartedMain] c.d.s.StudentVacancyAllocaterApplication : Starting StudentVacancyAllocaterApplication using Java 11.0.10 on localhost.localdomain with PID 5871 (/home/tendaizhou/Source_Code/form-one-registration/target/classes started by tendaizhou in /home/tendaizhou/Source_Code/form-one-registration)
+2021-03-13 15:35:26.122  INFO 5871 --- [restartedMain] c.d.s.StudentVacancyAllocaterApplication : No active profile set, falling back to default profiles: default
+2021-03-13 15:35:26.200  INFO 5871 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-03-13 15:35:26.200  INFO 5871 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-03-13 15:35:27.748  INFO 5871 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-03-13 15:35:27.876  INFO 5871 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 114 ms. Found 7 JPA repository interfaces.
+2021-03-13 15:35:28.894  INFO 5871 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8788 (http)
+2021-03-13 15:35:28.906  INFO 5871 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-03-13 15:35:28.906  INFO 5871 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-03-13 15:35:29.014  INFO 5871 --- [restartedMain] o.a.c.c.C.[.[localhost].[/regSystem]     : Initializing Spring embedded WebApplicationContext
+2021-03-13 15:35:29.015  INFO 5871 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2814 ms
+2021-03-13 15:35:30.296  INFO 5871 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-03-13 15:35:31.156  INFO 5871 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-03-13 15:35:33.151  INFO 5871 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-03-13 15:35:33.221  INFO 5871 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-03-13 15:35:34.163  INFO 5871 --- [actor-system-akka.actor.default-dispatcher-5] akka.event.slf4j.Slf4jLogger             : Slf4jLogger started
+2021-03-13 15:35:35.115  WARN 5871 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-03-13 15:35:35.284  INFO 5871 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-13 15:35:35.544  WARN 5871 --- [restartedMain] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2021-03-13 15:35:35.827  INFO 5871 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8788 (http) with context path '/regSystem'
+2021-03-13 15:35:35.863  INFO 5871 --- [restartedMain] c.d.s.StudentVacancyAllocaterApplication : Started StudentVacancyAllocaterApplication in 11.018 seconds (JVM running for 12.47)
+2021-03-13 15:36:04.399  INFO 5871 --- [http-nio-8788-exec-1] o.a.c.c.C.[.[localhost].[/regSystem]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-03-13 15:36:04.400  INFO 5871 --- [http-nio-8788-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-03-13 15:36:04.402  INFO 5871 --- [http-nio-8788-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2021-03-13 15:36:04.904 ERROR 5871 --- [actor-system-akka.actor.default-dispatcher-6] akka.actor.OneForOneStrategy             : attempted to assign id from null one-to-one property [com.dsw.studentvacancyallocater.models.Deadline.school]; nested exception is org.hibernate.id.IdentifierGenerationException: attempted to assign id from null one-to-one property [com.dsw.studentvacancyallocater.models.Deadline.school]
+
+org.springframework.orm.jpa.JpaSystemException: attempted to assign id from null one-to-one property [com.dsw.studentvacancyallocater.models.Deadline.school]; nested exception is org.hibernate.id.IdentifierGenerationException: attempted to assign id from null one-to-one property [com.dsw.studentvacancyallocater.models.Deadline.school]
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.convertHibernateAccessException(HibernateJpaDialect.java:331) ~[spring-orm-5.3.2.jar:5.3.2]
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.translateExceptionIfPossible(HibernateJpaDialect.java:233) ~[spring-orm-5.3.2.jar:5.3.2]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.translateExceptionIfPossible(AbstractEntityManagerFactoryBean.java:551) ~[spring-orm-5.3.2.jar:5.3.2]
+	at org.springframework.dao.support.ChainedPersistenceExceptionTranslator.translateExceptionIfPossible(ChainedPersistenceExceptionTranslator.java:61) ~[spring-tx-5.3.2.jar:5.3.2]
+	at org.springframework.dao.support.DataAccessUtils.translateIfNecessary(DataAccessUtils.java:242) ~[spring-tx-5.3.2.jar:5.3.2]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:152) ~[spring-tx-5.3.2.jar:5.3.2]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.2.jar:5.3.2]
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:174) ~[spring-data-jpa-2.4.2.jar:2.4.2]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.2.jar:5.3.2]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97) ~[spring-aop-5.3.2.jar:5.3.2]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.2.jar:5.3.2]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215) ~[spring-aop-5.3.2.jar:5.3.2]
+	at com.sun.proxy.$Proxy108.save(Unknown Source) ~[na:na]
+	at com.dsw.studentvacancyallocater.actors.SchoolActor.registerSchool(SchoolActor.java:48) ~[classes/:na]
+	at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:24) ~[akka-actor_2.13-2.6.11.jar:2.6.11]
+	at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:20) ~[akka-actor_2.13-2.6.11.jar:2.6.11]
+	at scala.PartialFunction.applyOrElse(PartialFunction.scala:187) ~[scala-library-2.13.3.jar:na]
+	at scala.PartialFunction.applyOrElse$(PartialFunction.scala:186) ~[scala-library-2.13.3.jar:na]
+	at akka.japi.pf.UnitCaseStatement.applyOrElse(CaseStatements.scala:20) ~[akka-actor_2.13-2.6.11.jar:2.6.11]
+	at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:241) ~[scala-library-2.13.3.jar:na]
+	at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:242) ~[scala-library-2.13.3.jar:na]
+	at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:242) ~[scala-library-2.13.3.jar:na]
+	at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:242) ~[scala-library-2.13.3.jar:na]
+	at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:242) ~[scala-library-2.13.3.jar:na]
+	at akka.actor.Actor.aroundReceive(Actor.scala:537) ~[akka-actor_2.13-2.6.11.jar:2.6.11]
+	at akka.actor.Actor.aroundReceive$(Actor.scala:535) ~[akka-actor_2.13-2.6.11.jar:2.6.11]
+	at akka.actor.AbstractActor.aroundReceive(AbstractActor.scala:220) ~[akka-actor_2.13-2.6.11.jar:2.6.11]
+	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:577) ~[akka-actor_2.13-2.6.11.jar:2.6.11]
+	at akka.actor.ActorCell.invoke(ActorCell.scala:547) ~[akka-actor_2.13-2.6.11.jar:2.6.11]
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:270) ~[akka-actor_2.13-2.6.11.jar:2.6.11]
+	at akka.dispatch.Mailbox.run(Mailbox.scala:231) ~[akka-actor_2.13-2.6.11.jar:2.6.11]
+	at akka.dispatch.Mailbox.exec(Mailbox.scala:243) ~[akka-actor_2.13-2.6.11.jar:2.6.11]
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:290) ~[na:na]
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1020) ~[na:na]
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1656) ~[na:na]
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1594) ~[na:na]
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:183) ~[na:na]
+Caused by: org.hibernate.id.IdentifierGenerationException: attempted to assign id from null one-to-one property [com.dsw.studentvacancyallocater.models.Deadline.school]
+	at org.hibernate.id.ForeignGenerator.generate(ForeignGenerator.java:87) ~[hibernate-core-5.4.25.Final.jar:5.4.25.Final]
+	at org.hibernate.event.internal.AbstractSaveEventListener.saveWithGeneratedId(AbstractSaveEventListener.java:115) ~[hibernate-core-5.4.25.Final.jar:5.4.25.Final]
+	at org.hibernate.event.internal.DefaultPersistEventListener.entityIsTransient(DefaultPersistEventListener.java:185) ~[hibernate-core-5.4.25.Final.jar:5.4.25.Final]
+	at org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:128) ~[hibernate-core-5.4.25.Final.jar:5.4.25.Final]
+	at org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:55) ~[hibernate-core-5.4.25.Final.jar:5.4.25.Final]
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:102) ~[hibernate-core-5.4.25.Final.jar:5.4.25.Final]
+	at org.hibernate.internal.SessionImpl.firePersist(SessionImpl.java:720) ~[hibernate-core-5.4.25.Final.jar:5.4.25.Final]
+	at org.hibernate.internal.SessionImpl.persist(SessionImpl.java:706) ~[hibernate-core-5.4.25.Final.jar:5.4.25.Final]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
+	at org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:311) ~[spring-orm-5.3.2.jar:5.3.2]
+	at com.sun.proxy.$Proxy94.persist(Unknown Source) ~[na:na]
+	at org.springframework.data.jpa.repository.support.SimpleJpaRepository.save(SimpleJpaRepository.java:557) ~[spring-data-jpa-2.4.2.jar:2.4.2]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker$RepositoryFragmentMethodInvoker.lambda$new$0(RepositoryMethodInvoker.java:289) ~[spring-data-commons-2.4.2.jar:2.4.2]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:137) ~[spring-data-commons-2.4.2.jar:2.4.2]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:121) ~[spring-data-commons-2.4.2.jar:2.4.2]
+	at org.springframework.data.repository.core.support.RepositoryComposition$RepositoryFragments.invoke(RepositoryComposition.java:524) ~[spring-data-commons-2.4.2.jar:2.4.2]
+	at org.springframework.data.repository.core.support.RepositoryComposition.invoke(RepositoryComposition.java:285) ~[spring-data-commons-2.4.2.jar:2.4.2]
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$ImplementationMethodExecutionInterceptor.invoke(RepositoryFactorySupport.java:531) ~[spring-data-commons-2.4.2.jar:2.4.2]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.2.jar:5.3.2]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:156) ~[spring-data-commons-2.4.2.jar:2.4.2]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:131) ~[spring-data-commons-2.4.2.jar:2.4.2]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.2.jar:5.3.2]
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:80) ~[spring-data-commons-2.4.2.jar:2.4.2]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.2.jar:5.3.2]
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123) ~[spring-tx-5.3.2.jar:5.3.2]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:388) ~[spring-tx-5.3.2.jar:5.3.2]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-5.3.2.jar:5.3.2]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.2.jar:5.3.2]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137) ~[spring-tx-5.3.2.jar:5.3.2]
+	... 31 common frames omitted
+
+2021-03-13 15:39:19.895  INFO 5871 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-03-13 15:39:19.900  INFO 5871 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-03-13 15:39:19.930  INFO 5871 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-03-13 15:39:19.941  INFO 5871 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-03-13 15:39:34.155  INFO 6264 --- [restartedMain] c.d.s.StudentVacancyAllocaterApplication : Starting StudentVacancyAllocaterApplication using Java 11.0.10 on localhost.localdomain with PID 6264 (/home/tendaizhou/Source_Code/form-one-registration/target/classes started by tendaizhou in /home/tendaizhou/Source_Code/form-one-registration)
+2021-03-13 15:39:34.158  INFO 6264 --- [restartedMain] c.d.s.StudentVacancyAllocaterApplication : No active profile set, falling back to default profiles: default
+2021-03-13 15:39:34.219  INFO 6264 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-03-13 15:39:34.220  INFO 6264 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-03-13 15:39:35.077  INFO 6264 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-03-13 15:39:35.179  INFO 6264 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 92 ms. Found 7 JPA repository interfaces.
+2021-03-13 15:39:35.905  INFO 6264 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8788 (http)
+2021-03-13 15:39:35.918  INFO 6264 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-03-13 15:39:35.919  INFO 6264 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-03-13 15:39:36.002  INFO 6264 --- [restartedMain] o.a.c.c.C.[.[localhost].[/regSystem]     : Initializing Spring embedded WebApplicationContext
+2021-03-13 15:39:36.002  INFO 6264 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1782 ms
+2021-03-13 15:39:36.457  INFO 6264 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-03-13 15:39:36.614  INFO 6264 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-03-13 15:39:37.625  INFO 6264 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-03-13 15:39:37.659  INFO 6264 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-03-13 15:39:38.315  INFO 6264 --- [actor-system-akka.actor.default-dispatcher-5] akka.event.slf4j.Slf4jLogger             : Slf4jLogger started
+2021-03-13 15:39:39.159  WARN 6264 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-03-13 15:39:39.293  INFO 6264 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-13 15:39:39.459  WARN 6264 --- [restartedMain] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2021-03-13 15:39:39.635  INFO 6264 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8788 (http) with context path '/regSystem'
+2021-03-13 15:39:39.653  INFO 6264 --- [restartedMain] c.d.s.StudentVacancyAllocaterApplication : Started StudentVacancyAllocaterApplication in 5.988 seconds (JVM running for 6.527)
+2021-03-13 15:40:10.625  INFO 6264 --- [http-nio-8788-exec-1] o.a.c.c.C.[.[localhost].[/regSystem]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-03-13 15:40:10.626  INFO 6264 --- [http-nio-8788-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-03-13 15:40:10.628  INFO 6264 --- [http-nio-8788-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-03-13 15:40:10.999 ERROR 6264 --- [actor-system-akka.actor.default-dispatcher-5] akka.actor.OneForOneStrategy             : detached entity passed to persist: com.dsw.studentvacancyallocater.models.School; nested exception is org.hibernate.PersistentObjectException: detached entity passed to persist: com.dsw.studentvacancyallocater.models.School
+
+org.springframework.dao.InvalidDataAccessApiUsageException: detached entity passed to persist: com.dsw.studentvacancyallocater.models.School; nested exception is org.hibernate.PersistentObjectException: detached entity passed to persist: com.dsw.studentvacancyallocater.models.School
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.convertHibernateAccessException(HibernateJpaDialect.java:297) ~[spring-orm-5.3.2.jar:5.3.2]
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.translateExceptionIfPossible(HibernateJpaDialect.java:233) ~[spring-orm-5.3.2.jar:5.3.2]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.translateExceptionIfPossible(AbstractEntityManagerFactoryBean.java:551) ~[spring-orm-5.3.2.jar:5.3.2]
+	at org.springframework.dao.support.ChainedPersistenceExceptionTranslator.translateExceptionIfPossible(ChainedPersistenceExceptionTranslator.java:61) ~[spring-tx-5.3.2.jar:5.3.2]
+	at org.springframework.dao.support.DataAccessUtils.translateIfNecessary(DataAccessUtils.java:242) ~[spring-tx-5.3.2.jar:5.3.2]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:152) ~[spring-tx-5.3.2.jar:5.3.2]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.2.jar:5.3.2]
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:174) ~[spring-data-jpa-2.4.2.jar:2.4.2]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.2.jar:5.3.2]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97) ~[spring-aop-5.3.2.jar:5.3.2]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.2.jar:5.3.2]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215) ~[spring-aop-5.3.2.jar:5.3.2]
+	at com.sun.proxy.$Proxy108.save(Unknown Source) ~[na:na]
+	at com.dsw.studentvacancyallocater.actors.SchoolActor.registerSchool(SchoolActor.java:49) ~[classes/:na]
+	at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:24) ~[akka-actor_2.13-2.6.11.jar:2.6.11]
+	at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:20) ~[akka-actor_2.13-2.6.11.jar:2.6.11]
+	at scala.PartialFunction.applyOrElse(PartialFunction.scala:187) ~[scala-library-2.13.3.jar:na]
+	at scala.PartialFunction.applyOrElse$(PartialFunction.scala:186) ~[scala-library-2.13.3.jar:na]
+	at akka.japi.pf.UnitCaseStatement.applyOrElse(CaseStatements.scala:20) ~[akka-actor_2.13-2.6.11.jar:2.6.11]
+	at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:241) ~[scala-library-2.13.3.jar:na]
+	at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:242) ~[scala-library-2.13.3.jar:na]
+	at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:242) ~[scala-library-2.13.3.jar:na]
+	at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:242) ~[scala-library-2.13.3.jar:na]
+	at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:242) ~[scala-library-2.13.3.jar:na]
+	at akka.actor.Actor.aroundReceive(Actor.scala:537) ~[akka-actor_2.13-2.6.11.jar:2.6.11]
+	at akka.actor.Actor.aroundReceive$(Actor.scala:535) ~[akka-actor_2.13-2.6.11.jar:2.6.11]
+	at akka.actor.AbstractActor.aroundReceive(AbstractActor.scala:220) ~[akka-actor_2.13-2.6.11.jar:2.6.11]
+	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:577) ~[akka-actor_2.13-2.6.11.jar:2.6.11]
+	at akka.actor.ActorCell.invoke(ActorCell.scala:547) ~[akka-actor_2.13-2.6.11.jar:2.6.11]
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:270) ~[akka-actor_2.13-2.6.11.jar:2.6.11]
+	at akka.dispatch.Mailbox.run(Mailbox.scala:231) ~[akka-actor_2.13-2.6.11.jar:2.6.11]
+	at akka.dispatch.Mailbox.exec(Mailbox.scala:243) ~[akka-actor_2.13-2.6.11.jar:2.6.11]
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:290) ~[na:na]
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1020) ~[na:na]
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1656) ~[na:na]
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1594) ~[na:na]
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:183) ~[na:na]
+Caused by: org.hibernate.PersistentObjectException: detached entity passed to persist: com.dsw.studentvacancyallocater.models.School
+	at org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:120) ~[hibernate-core-5.4.25.Final.jar:5.4.25.Final]
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:113) ~[hibernate-core-5.4.25.Final.jar:5.4.25.Final]
+	at org.hibernate.internal.SessionImpl.firePersist(SessionImpl.java:744) ~[hibernate-core-5.4.25.Final.jar:5.4.25.Final]
+	at org.hibernate.internal.SessionImpl.persist(SessionImpl.java:712) ~[hibernate-core-5.4.25.Final.jar:5.4.25.Final]
+	at org.hibernate.engine.spi.CascadingActions$7.cascade(CascadingActions.java:298) ~[hibernate-core-5.4.25.Final.jar:5.4.25.Final]
+	at org.hibernate.engine.internal.Cascade.cascadeToOne(Cascade.java:492) ~[hibernate-core-5.4.25.Final.jar:5.4.25.Final]
+	at org.hibernate.engine.internal.Cascade.cascadeAssociation(Cascade.java:416) ~[hibernate-core-5.4.25.Final.jar:5.4.25.Final]
+	at org.hibernate.engine.internal.Cascade.cascadeProperty(Cascade.java:218) ~[hibernate-core-5.4.25.Final.jar:5.4.25.Final]
+	at org.hibernate.engine.internal.Cascade.cascade(Cascade.java:151) ~[hibernate-core-5.4.25.Final.jar:5.4.25.Final]
+	at org.hibernate.event.internal.AbstractSaveEventListener.cascadeBeforeSave(AbstractSaveEventListener.java:427) ~[hibernate-core-5.4.25.Final.jar:5.4.25.Final]
+	at org.hibernate.event.internal.AbstractSaveEventListener.performSaveOrReplicate(AbstractSaveEventListener.java:264) ~[hibernate-core-5.4.25.Final.jar:5.4.25.Final]
+	at org.hibernate.event.internal.AbstractSaveEventListener.performSave(AbstractSaveEventListener.java:193) ~[hibernate-core-5.4.25.Final.jar:5.4.25.Final]
+	at org.hibernate.event.internal.AbstractSaveEventListener.saveWithGeneratedId(AbstractSaveEventListener.java:135) ~[hibernate-core-5.4.25.Final.jar:5.4.25.Final]
+	at org.hibernate.event.internal.DefaultPersistEventListener.entityIsTransient(DefaultPersistEventListener.java:185) ~[hibernate-core-5.4.25.Final.jar:5.4.25.Final]
+	at org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:128) ~[hibernate-core-5.4.25.Final.jar:5.4.25.Final]
+	at org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:55) ~[hibernate-core-5.4.25.Final.jar:5.4.25.Final]
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:102) ~[hibernate-core-5.4.25.Final.jar:5.4.25.Final]
+	at org.hibernate.internal.SessionImpl.firePersist(SessionImpl.java:720) ~[hibernate-core-5.4.25.Final.jar:5.4.25.Final]
+	at org.hibernate.internal.SessionImpl.persist(SessionImpl.java:706) ~[hibernate-core-5.4.25.Final.jar:5.4.25.Final]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
+	at org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:311) ~[spring-orm-5.3.2.jar:5.3.2]
+	at com.sun.proxy.$Proxy94.persist(Unknown Source) ~[na:na]
+	at org.springframework.data.jpa.repository.support.SimpleJpaRepository.save(SimpleJpaRepository.java:557) ~[spring-data-jpa-2.4.2.jar:2.4.2]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker$RepositoryFragmentMethodInvoker.lambda$new$0(RepositoryMethodInvoker.java:289) ~[spring-data-commons-2.4.2.jar:2.4.2]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:137) ~[spring-data-commons-2.4.2.jar:2.4.2]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:121) ~[spring-data-commons-2.4.2.jar:2.4.2]
+	at org.springframework.data.repository.core.support.RepositoryComposition$RepositoryFragments.invoke(RepositoryComposition.java:524) ~[spring-data-commons-2.4.2.jar:2.4.2]
+	at org.springframework.data.repository.core.support.RepositoryComposition.invoke(RepositoryComposition.java:285) ~[spring-data-commons-2.4.2.jar:2.4.2]
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$ImplementationMethodExecutionInterceptor.invoke(RepositoryFactorySupport.java:531) ~[spring-data-commons-2.4.2.jar:2.4.2]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.2.jar:5.3.2]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:156) ~[spring-data-commons-2.4.2.jar:2.4.2]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:131) ~[spring-data-commons-2.4.2.jar:2.4.2]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.2.jar:5.3.2]
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:80) ~[spring-data-commons-2.4.2.jar:2.4.2]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.2.jar:5.3.2]
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123) ~[spring-tx-5.3.2.jar:5.3.2]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:388) ~[spring-tx-5.3.2.jar:5.3.2]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-5.3.2.jar:5.3.2]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.2.jar:5.3.2]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137) ~[spring-tx-5.3.2.jar:5.3.2]
+	... 31 common frames omitted
+
+2021-03-13 15:40:59.504  INFO 6264 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-03-13 15:40:59.508  INFO 6264 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-03-13 15:40:59.512  INFO 6264 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-03-13 15:40:59.522  INFO 6264 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-03-13 15:41:10.387  INFO 6436 --- [restartedMain] c.d.s.StudentVacancyAllocaterApplication : Starting StudentVacancyAllocaterApplication using Java 11.0.10 on localhost.localdomain with PID 6436 (/home/tendaizhou/Source_Code/form-one-registration/target/classes started by tendaizhou in /home/tendaizhou/Source_Code/form-one-registration)
+2021-03-13 15:41:10.390  INFO 6436 --- [restartedMain] c.d.s.StudentVacancyAllocaterApplication : No active profile set, falling back to default profiles: default
+2021-03-13 15:41:10.447  INFO 6436 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-03-13 15:41:10.447  INFO 6436 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-03-13 15:41:11.250  INFO 6436 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-03-13 15:41:11.342  INFO 6436 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 83 ms. Found 7 JPA repository interfaces.
+2021-03-13 15:41:11.959  INFO 6436 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8788 (http)
+2021-03-13 15:41:11.969  INFO 6436 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-03-13 15:41:11.970  INFO 6436 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-03-13 15:41:12.040  INFO 6436 --- [restartedMain] o.a.c.c.C.[.[localhost].[/regSystem]     : Initializing Spring embedded WebApplicationContext
+2021-03-13 15:41:12.040  INFO 6436 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1592 ms
+2021-03-13 15:41:12.423  INFO 6436 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-03-13 15:41:12.579  INFO 6436 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-03-13 15:41:13.473  INFO 6436 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-03-13 15:41:13.509  INFO 6436 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-03-13 15:41:14.117  INFO 6436 --- [actor-system-akka.actor.default-dispatcher-5] akka.event.slf4j.Slf4jLogger             : Slf4jLogger started
+2021-03-13 15:41:15.102  WARN 6436 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-03-13 15:41:15.230  INFO 6436 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-13 15:41:15.399  WARN 6436 --- [restartedMain] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2021-03-13 15:41:15.574  INFO 6436 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8788 (http) with context path '/regSystem'
+2021-03-13 15:41:15.589  INFO 6436 --- [restartedMain] c.d.s.StudentVacancyAllocaterApplication : Started StudentVacancyAllocaterApplication in 5.673 seconds (JVM running for 6.181)
+2021-03-13 15:41:20.748  INFO 6436 --- [http-nio-8788-exec-1] o.a.c.c.C.[.[localhost].[/regSystem]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-03-13 15:41:20.749  INFO 6436 --- [http-nio-8788-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-03-13 15:41:20.753  INFO 6436 --- [http-nio-8788-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2021-03-13 15:41:28.767  INFO 6436 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-03-13 15:41:28.771  INFO 6436 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-03-13 15:41:28.776  INFO 6436 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-03-13 15:41:28.787  INFO 6436 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
