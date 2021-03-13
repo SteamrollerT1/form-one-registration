@@ -1064,3 +1064,316 @@ Caused by: org.hibernate.PersistentObjectException: detached entity passed to pe
 2021-03-13 15:41:28.771  INFO 6436 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2021-03-13 15:41:28.776  INFO 6436 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2021-03-13 15:41:28.787  INFO 6436 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-03-13 16:12:26.900  INFO 8594 --- [restartedMain] c.d.s.StudentVacancyAllocaterApplication : Starting StudentVacancyAllocaterApplication using Java 11.0.10 on localhost.localdomain with PID 8594 (/home/tendaizhou/Source_Code/form-one-registration/target/classes started by tendaizhou in /home/tendaizhou/Source_Code/form-one-registration)
+2021-03-13 16:12:26.903  INFO 8594 --- [restartedMain] c.d.s.StudentVacancyAllocaterApplication : No active profile set, falling back to default profiles: default
+2021-03-13 16:12:26.959  INFO 8594 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-03-13 16:12:26.960  INFO 8594 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-03-13 16:12:27.735  INFO 8594 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-03-13 16:12:27.829  INFO 8594 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 85 ms. Found 7 JPA repository interfaces.
+2021-03-13 16:12:28.477  INFO 8594 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8788 (http)
+2021-03-13 16:12:28.487  INFO 8594 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-03-13 16:12:28.487  INFO 8594 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-03-13 16:12:28.554  INFO 8594 --- [restartedMain] o.a.c.c.C.[.[localhost].[/regSystem]     : Initializing Spring embedded WebApplicationContext
+2021-03-13 16:12:28.555  INFO 8594 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1594 ms
+2021-03-13 16:12:28.923  INFO 8594 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-03-13 16:12:29.074  INFO 8594 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-03-13 16:12:29.950  INFO 8594 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-03-13 16:12:29.983  INFO 8594 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-03-13 16:12:30.505  INFO 8594 --- [actor-system-akka.actor.default-dispatcher-5] akka.event.slf4j.Slf4jLogger             : Slf4jLogger started
+2021-03-13 16:12:31.178  WARN 8594 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-03-13 16:12:31.295  INFO 8594 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-13 16:12:31.452  WARN 8594 --- [restartedMain] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2021-03-13 16:12:31.623  INFO 8594 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8788 (http) with context path '/regSystem'
+2021-03-13 16:12:31.637  INFO 8594 --- [restartedMain] c.d.s.StudentVacancyAllocaterApplication : Started StudentVacancyAllocaterApplication in 5.22 seconds (JVM running for 5.731)
+2021-03-13 16:12:37.903  INFO 8594 --- [http-nio-8788-exec-1] o.a.c.c.C.[.[localhost].[/regSystem]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-03-13 16:12:37.904  INFO 8594 --- [http-nio-8788-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-03-13 16:12:37.907  INFO 8594 --- [http-nio-8788-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2021-03-13 16:12:38.039 ERROR 8594 --- [actor-system-akka.actor.default-dispatcher-6] akka.actor.OneForOneStrategy             : Message is null
+
+akka.actor.InvalidMessageException: Message is null
+	at akka.actor.InvalidMessageException$.apply(Actor.scala:265) ~[akka-actor_2.13-2.6.11.jar:2.6.11]
+	at akka.pattern.PromiseActorRef.$bang(AskSupport.scala:609) ~[akka-actor_2.13-2.6.11.jar:2.6.11]
+	at akka.actor.ActorRef.tell(ActorRef.scala:129) ~[akka-actor_2.13-2.6.11.jar:2.6.11]
+	at com.dsw.studentvacancyallocater.actors.DeadlineActor.getDeadlineBySchoolId(DeadlineActor.java:30) ~[classes/:na]
+	at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:24) ~[akka-actor_2.13-2.6.11.jar:2.6.11]
+	at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:20) ~[akka-actor_2.13-2.6.11.jar:2.6.11]
+	at scala.PartialFunction.applyOrElse(PartialFunction.scala:187) ~[scala-library-2.13.3.jar:na]
+	at scala.PartialFunction.applyOrElse$(PartialFunction.scala:186) ~[scala-library-2.13.3.jar:na]
+	at akka.japi.pf.UnitCaseStatement.applyOrElse(CaseStatements.scala:20) ~[akka-actor_2.13-2.6.11.jar:2.6.11]
+	at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:241) ~[scala-library-2.13.3.jar:na]
+	at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:242) ~[scala-library-2.13.3.jar:na]
+	at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:242) ~[scala-library-2.13.3.jar:na]
+	at akka.actor.Actor.aroundReceive(Actor.scala:537) ~[akka-actor_2.13-2.6.11.jar:2.6.11]
+	at akka.actor.Actor.aroundReceive$(Actor.scala:535) ~[akka-actor_2.13-2.6.11.jar:2.6.11]
+	at akka.actor.AbstractActor.aroundReceive(AbstractActor.scala:220) ~[akka-actor_2.13-2.6.11.jar:2.6.11]
+	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:577) ~[akka-actor_2.13-2.6.11.jar:2.6.11]
+	at akka.actor.ActorCell.invoke(ActorCell.scala:547) ~[akka-actor_2.13-2.6.11.jar:2.6.11]
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:270) ~[akka-actor_2.13-2.6.11.jar:2.6.11]
+	at akka.dispatch.Mailbox.run(Mailbox.scala:231) ~[akka-actor_2.13-2.6.11.jar:2.6.11]
+	at akka.dispatch.Mailbox.exec(Mailbox.scala:243) ~[akka-actor_2.13-2.6.11.jar:2.6.11]
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:290) ~[na:na]
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1020) ~[na:na]
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1656) ~[na:na]
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1594) ~[na:na]
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:183) ~[na:na]
+
+2021-03-13 16:19:14.608  INFO 8594 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-03-13 16:19:14.612  INFO 8594 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-03-13 16:19:14.616  INFO 8594 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-03-13 16:19:14.625  INFO 8594 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-03-13 16:19:26.044  INFO 9044 --- [restartedMain] c.d.s.StudentVacancyAllocaterApplication : Starting StudentVacancyAllocaterApplication using Java 11.0.10 on localhost.localdomain with PID 9044 (/home/tendaizhou/Source_Code/form-one-registration/target/classes started by tendaizhou in /home/tendaizhou/Source_Code/form-one-registration)
+2021-03-13 16:19:26.047  INFO 9044 --- [restartedMain] c.d.s.StudentVacancyAllocaterApplication : No active profile set, falling back to default profiles: default
+2021-03-13 16:19:26.104  INFO 9044 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-03-13 16:19:26.105  INFO 9044 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-03-13 16:19:26.843  INFO 9044 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-03-13 16:19:26.929  INFO 9044 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 77 ms. Found 7 JPA repository interfaces.
+2021-03-13 16:19:27.542  INFO 9044 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8788 (http)
+2021-03-13 16:19:27.552  INFO 9044 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-03-13 16:19:27.553  INFO 9044 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-03-13 16:19:27.624  INFO 9044 --- [restartedMain] o.a.c.c.C.[.[localhost].[/regSystem]     : Initializing Spring embedded WebApplicationContext
+2021-03-13 16:19:27.624  INFO 9044 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1519 ms
+2021-03-13 16:19:28.004  INFO 9044 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-03-13 16:19:28.138  INFO 9044 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-03-13 16:19:29.020  INFO 9044 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-03-13 16:19:29.045  INFO 9044 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-03-13 16:19:29.573  INFO 9044 --- [actor-system-akka.actor.default-dispatcher-5] akka.event.slf4j.Slf4jLogger             : Slf4jLogger started
+2021-03-13 16:19:30.250  WARN 9044 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-03-13 16:19:30.368  INFO 9044 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-13 16:19:30.522  WARN 9044 --- [restartedMain] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2021-03-13 16:19:30.692  INFO 9044 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8788 (http) with context path '/regSystem'
+2021-03-13 16:19:30.709  INFO 9044 --- [restartedMain] c.d.s.StudentVacancyAllocaterApplication : Started StudentVacancyAllocaterApplication in 5.134 seconds (JVM running for 5.644)
+2021-03-13 16:19:38.386  INFO 9044 --- [http-nio-8788-exec-1] o.a.c.c.C.[.[localhost].[/regSystem]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-03-13 16:19:38.387  INFO 9044 --- [http-nio-8788-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-03-13 16:19:38.390  INFO 9044 --- [http-nio-8788-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2021-03-13 16:27:41.880  INFO 9044 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-03-13 16:27:41.882  INFO 9044 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-03-13 16:27:41.886  INFO 9044 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-03-13 16:27:41.894  INFO 9044 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-03-13 16:27:56.362  INFO 9573 --- [restartedMain] c.d.s.StudentVacancyAllocaterApplication : Starting StudentVacancyAllocaterApplication using Java 11.0.10 on localhost.localdomain with PID 9573 (/home/tendaizhou/Source_Code/form-one-registration/target/classes started by tendaizhou in /home/tendaizhou/Source_Code/form-one-registration)
+2021-03-13 16:27:56.366  INFO 9573 --- [restartedMain] c.d.s.StudentVacancyAllocaterApplication : No active profile set, falling back to default profiles: default
+2021-03-13 16:27:56.422  INFO 9573 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-03-13 16:27:56.422  INFO 9573 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-03-13 16:27:57.020  INFO 9573 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-03-13 16:27:57.102  INFO 9573 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 75 ms. Found 7 JPA repository interfaces.
+2021-03-13 16:27:57.615  INFO 9573 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8788 (http)
+2021-03-13 16:27:57.624  INFO 9573 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-03-13 16:27:57.624  INFO 9573 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-03-13 16:27:57.682  INFO 9573 --- [restartedMain] o.a.c.c.C.[.[localhost].[/regSystem]     : Initializing Spring embedded WebApplicationContext
+2021-03-13 16:27:57.683  INFO 9573 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1260 ms
+2021-03-13 16:27:57.960  INFO 9573 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-03-13 16:27:58.063  INFO 9573 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-03-13 16:27:58.807  INFO 9573 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-03-13 16:27:58.828  INFO 9573 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-03-13 16:27:59.218  INFO 9573 --- [actor-system-akka.actor.default-dispatcher-5] akka.event.slf4j.Slf4jLogger             : Slf4jLogger started
+2021-03-13 16:27:59.729  WARN 9573 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-03-13 16:27:59.825  INFO 9573 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-13 16:27:59.950  WARN 9573 --- [restartedMain] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2021-03-13 16:28:00.089  INFO 9573 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8788 (http) with context path '/regSystem'
+2021-03-13 16:28:00.100  INFO 9573 --- [restartedMain] c.d.s.StudentVacancyAllocaterApplication : Started StudentVacancyAllocaterApplication in 4.124 seconds (JVM running for 4.552)
+2021-03-13 16:28:03.920  INFO 9573 --- [http-nio-8788-exec-1] o.a.c.c.C.[.[localhost].[/regSystem]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-03-13 16:28:03.921  INFO 9573 --- [http-nio-8788-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-03-13 16:28:03.924  INFO 9573 --- [http-nio-8788-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2021-03-13 16:28:04.348 ERROR 9573 --- [http-nio-8788-exec-1] o.a.c.c.C.[.[.[.[dispatcherServlet]      : Servlet.service() for servlet [dispatcherServlet] in context with path [/regSystem] threw exception [Request processing failed; nested exception is java.lang.IllegalArgumentException] with root cause
+
+java.lang.IllegalArgumentException: null
+	at java.sql/java.sql.Date.valueOf(Date.java:141) ~[java.sql:na]
+	at com.dsw.studentvacancyallocater.services.impl.SchoolServiceImpl.openRegistration(SchoolServiceImpl.java:87) ~[classes/:na]
+	at com.dsw.studentvacancyallocater.controllers.SchoolController.openRegistrationPeriod(SchoolController.java:71) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:197) ~[spring-web-5.3.2.jar:5.3.2]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:141) ~[spring-web-5.3.2.jar:5.3.2]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106) ~[spring-webmvc-5.3.2.jar:5.3.2]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:894) ~[spring-webmvc-5.3.2.jar:5.3.2]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.2.jar:5.3.2]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.2.jar:5.3.2]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1061) ~[spring-webmvc-5.3.2.jar:5.3.2]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:961) ~[spring-webmvc-5.3.2.jar:5.3.2]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.2.jar:5.3.2]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909) ~[spring-webmvc-5.3.2.jar:5.3.2]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:652) ~[tomcat-embed-core-9.0.41.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.2.jar:5.3.2]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733) ~[tomcat-embed-core-9.0.41.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.2.jar:5.3.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.2.jar:5.3.2]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.2.jar:5.3.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.2.jar:5.3.2]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.2.jar:5.3.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.2.jar:5.3.2]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:888) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1597) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[na:na]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at java.base/java.lang.Thread.run(Thread.java:834) ~[na:na]
+
+2021-03-13 16:33:48.635  INFO 9573 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-03-13 16:33:48.637  INFO 9573 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-03-13 16:33:48.641  INFO 9573 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-03-13 16:33:48.650  INFO 9573 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-03-13 16:34:07.937  INFO 10441 --- [restartedMain] c.d.s.StudentVacancyAllocaterApplication : Starting StudentVacancyAllocaterApplication using Java 11.0.10 on localhost.localdomain with PID 10441 (/home/tendaizhou/Source_Code/form-one-registration/target/classes started by tendaizhou in /home/tendaizhou/Source_Code/form-one-registration)
+2021-03-13 16:34:07.940  INFO 10441 --- [restartedMain] c.d.s.StudentVacancyAllocaterApplication : No active profile set, falling back to default profiles: default
+2021-03-13 16:34:07.988  INFO 10441 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-03-13 16:34:07.988  INFO 10441 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-03-13 16:34:08.611  INFO 10441 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-03-13 16:34:08.696  INFO 10441 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 75 ms. Found 7 JPA repository interfaces.
+2021-03-13 16:34:09.168  INFO 10441 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8788 (http)
+2021-03-13 16:34:09.176  INFO 10441 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-03-13 16:34:09.177  INFO 10441 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-03-13 16:34:09.233  INFO 10441 --- [restartedMain] o.a.c.c.C.[.[localhost].[/regSystem]     : Initializing Spring embedded WebApplicationContext
+2021-03-13 16:34:09.233  INFO 10441 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1244 ms
+2021-03-13 16:34:09.508  INFO 10441 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-03-13 16:34:09.610  INFO 10441 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-03-13 16:34:10.328  INFO 10441 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-03-13 16:34:10.352  INFO 10441 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-03-13 16:34:10.748  INFO 10441 --- [actor-system-akka.actor.default-dispatcher-5] akka.event.slf4j.Slf4jLogger             : Slf4jLogger started
+2021-03-13 16:34:11.239  WARN 10441 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-03-13 16:34:11.362  INFO 10441 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-13 16:34:11.489  WARN 10441 --- [restartedMain] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2021-03-13 16:34:11.641  INFO 10441 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8788 (http) with context path '/regSystem'
+2021-03-13 16:34:11.654  INFO 10441 --- [restartedMain] c.d.s.StudentVacancyAllocaterApplication : Started StudentVacancyAllocaterApplication in 4.092 seconds (JVM running for 4.501)
+2021-03-13 16:34:23.104  INFO 10441 --- [http-nio-8788-exec-1] o.a.c.c.C.[.[localhost].[/regSystem]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-03-13 16:34:23.104  INFO 10441 --- [http-nio-8788-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-03-13 16:34:23.105  INFO 10441 --- [http-nio-8788-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-03-13 16:34:23.469 ERROR 10441 --- [actor-system-akka.actor.default-dispatcher-5] akka.actor.OneForOneStrategy             : detached entity passed to persist: com.dsw.studentvacancyallocater.models.School; nested exception is org.hibernate.PersistentObjectException: detached entity passed to persist: com.dsw.studentvacancyallocater.models.School
+
+org.springframework.dao.InvalidDataAccessApiUsageException: detached entity passed to persist: com.dsw.studentvacancyallocater.models.School; nested exception is org.hibernate.PersistentObjectException: detached entity passed to persist: com.dsw.studentvacancyallocater.models.School
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.convertHibernateAccessException(HibernateJpaDialect.java:297) ~[spring-orm-5.3.2.jar:5.3.2]
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.translateExceptionIfPossible(HibernateJpaDialect.java:233) ~[spring-orm-5.3.2.jar:5.3.2]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.translateExceptionIfPossible(AbstractEntityManagerFactoryBean.java:551) ~[spring-orm-5.3.2.jar:5.3.2]
+	at org.springframework.dao.support.ChainedPersistenceExceptionTranslator.translateExceptionIfPossible(ChainedPersistenceExceptionTranslator.java:61) ~[spring-tx-5.3.2.jar:5.3.2]
+	at org.springframework.dao.support.DataAccessUtils.translateIfNecessary(DataAccessUtils.java:242) ~[spring-tx-5.3.2.jar:5.3.2]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:152) ~[spring-tx-5.3.2.jar:5.3.2]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.2.jar:5.3.2]
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:174) ~[spring-data-jpa-2.4.2.jar:2.4.2]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.2.jar:5.3.2]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97) ~[spring-aop-5.3.2.jar:5.3.2]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.2.jar:5.3.2]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215) ~[spring-aop-5.3.2.jar:5.3.2]
+	at com.sun.proxy.$Proxy107.save(Unknown Source) ~[na:na]
+	at com.dsw.studentvacancyallocater.actors.DeadlineActor.updateDeadLinePeriod(DeadlineActor.java:20) ~[classes/:na]
+	at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:24) ~[akka-actor_2.13-2.6.11.jar:2.6.11]
+	at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:20) ~[akka-actor_2.13-2.6.11.jar:2.6.11]
+	at scala.PartialFunction.applyOrElse(PartialFunction.scala:187) ~[scala-library-2.13.3.jar:na]
+	at scala.PartialFunction.applyOrElse$(PartialFunction.scala:186) ~[scala-library-2.13.3.jar:na]
+	at akka.japi.pf.UnitCaseStatement.applyOrElse(CaseStatements.scala:20) ~[akka-actor_2.13-2.6.11.jar:2.6.11]
+	at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:241) ~[scala-library-2.13.3.jar:na]
+	at akka.actor.Actor.aroundReceive(Actor.scala:537) ~[akka-actor_2.13-2.6.11.jar:2.6.11]
+	at akka.actor.Actor.aroundReceive$(Actor.scala:535) ~[akka-actor_2.13-2.6.11.jar:2.6.11]
+	at akka.actor.AbstractActor.aroundReceive(AbstractActor.scala:220) ~[akka-actor_2.13-2.6.11.jar:2.6.11]
+	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:577) ~[akka-actor_2.13-2.6.11.jar:2.6.11]
+	at akka.actor.ActorCell.invoke(ActorCell.scala:547) ~[akka-actor_2.13-2.6.11.jar:2.6.11]
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:270) ~[akka-actor_2.13-2.6.11.jar:2.6.11]
+	at akka.dispatch.Mailbox.run(Mailbox.scala:231) ~[akka-actor_2.13-2.6.11.jar:2.6.11]
+	at akka.dispatch.Mailbox.exec(Mailbox.scala:243) ~[akka-actor_2.13-2.6.11.jar:2.6.11]
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:290) ~[na:na]
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1020) ~[na:na]
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1656) ~[na:na]
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1594) ~[na:na]
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:183) ~[na:na]
+Caused by: org.hibernate.PersistentObjectException: detached entity passed to persist: com.dsw.studentvacancyallocater.models.School
+	at org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:120) ~[hibernate-core-5.4.25.Final.jar:5.4.25.Final]
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:113) ~[hibernate-core-5.4.25.Final.jar:5.4.25.Final]
+	at org.hibernate.internal.SessionImpl.firePersist(SessionImpl.java:744) ~[hibernate-core-5.4.25.Final.jar:5.4.25.Final]
+	at org.hibernate.internal.SessionImpl.persist(SessionImpl.java:712) ~[hibernate-core-5.4.25.Final.jar:5.4.25.Final]
+	at org.hibernate.engine.spi.CascadingActions$7.cascade(CascadingActions.java:298) ~[hibernate-core-5.4.25.Final.jar:5.4.25.Final]
+	at org.hibernate.engine.internal.Cascade.cascadeToOne(Cascade.java:492) ~[hibernate-core-5.4.25.Final.jar:5.4.25.Final]
+	at org.hibernate.engine.internal.Cascade.cascadeAssociation(Cascade.java:416) ~[hibernate-core-5.4.25.Final.jar:5.4.25.Final]
+	at org.hibernate.engine.internal.Cascade.cascadeProperty(Cascade.java:218) ~[hibernate-core-5.4.25.Final.jar:5.4.25.Final]
+	at org.hibernate.engine.internal.Cascade.cascade(Cascade.java:151) ~[hibernate-core-5.4.25.Final.jar:5.4.25.Final]
+	at org.hibernate.event.internal.AbstractSaveEventListener.cascadeBeforeSave(AbstractSaveEventListener.java:427) ~[hibernate-core-5.4.25.Final.jar:5.4.25.Final]
+	at org.hibernate.event.internal.AbstractSaveEventListener.performSaveOrReplicate(AbstractSaveEventListener.java:264) ~[hibernate-core-5.4.25.Final.jar:5.4.25.Final]
+	at org.hibernate.event.internal.AbstractSaveEventListener.performSave(AbstractSaveEventListener.java:193) ~[hibernate-core-5.4.25.Final.jar:5.4.25.Final]
+	at org.hibernate.event.internal.AbstractSaveEventListener.saveWithGeneratedId(AbstractSaveEventListener.java:135) ~[hibernate-core-5.4.25.Final.jar:5.4.25.Final]
+	at org.hibernate.event.internal.DefaultPersistEventListener.entityIsTransient(DefaultPersistEventListener.java:185) ~[hibernate-core-5.4.25.Final.jar:5.4.25.Final]
+	at org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:128) ~[hibernate-core-5.4.25.Final.jar:5.4.25.Final]
+	at org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:55) ~[hibernate-core-5.4.25.Final.jar:5.4.25.Final]
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:102) ~[hibernate-core-5.4.25.Final.jar:5.4.25.Final]
+	at org.hibernate.internal.SessionImpl.firePersist(SessionImpl.java:720) ~[hibernate-core-5.4.25.Final.jar:5.4.25.Final]
+	at org.hibernate.internal.SessionImpl.persist(SessionImpl.java:706) ~[hibernate-core-5.4.25.Final.jar:5.4.25.Final]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
+	at org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:311) ~[spring-orm-5.3.2.jar:5.3.2]
+	at com.sun.proxy.$Proxy94.persist(Unknown Source) ~[na:na]
+	at org.springframework.data.jpa.repository.support.SimpleJpaRepository.save(SimpleJpaRepository.java:557) ~[spring-data-jpa-2.4.2.jar:2.4.2]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker$RepositoryFragmentMethodInvoker.lambda$new$0(RepositoryMethodInvoker.java:289) ~[spring-data-commons-2.4.2.jar:2.4.2]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:137) ~[spring-data-commons-2.4.2.jar:2.4.2]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:121) ~[spring-data-commons-2.4.2.jar:2.4.2]
+	at org.springframework.data.repository.core.support.RepositoryComposition$RepositoryFragments.invoke(RepositoryComposition.java:524) ~[spring-data-commons-2.4.2.jar:2.4.2]
+	at org.springframework.data.repository.core.support.RepositoryComposition.invoke(RepositoryComposition.java:285) ~[spring-data-commons-2.4.2.jar:2.4.2]
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$ImplementationMethodExecutionInterceptor.invoke(RepositoryFactorySupport.java:531) ~[spring-data-commons-2.4.2.jar:2.4.2]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.2.jar:5.3.2]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:156) ~[spring-data-commons-2.4.2.jar:2.4.2]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:131) ~[spring-data-commons-2.4.2.jar:2.4.2]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.2.jar:5.3.2]
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:80) ~[spring-data-commons-2.4.2.jar:2.4.2]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.2.jar:5.3.2]
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123) ~[spring-tx-5.3.2.jar:5.3.2]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:388) ~[spring-tx-5.3.2.jar:5.3.2]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-5.3.2.jar:5.3.2]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.2.jar:5.3.2]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137) ~[spring-tx-5.3.2.jar:5.3.2]
+	... 27 common frames omitted
+
+2021-03-13 16:39:29.770  INFO 10441 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-03-13 16:39:29.772  INFO 10441 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-03-13 16:39:29.778  INFO 10441 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-03-13 16:39:29.784  INFO 10441 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-03-13 16:39:38.725  INFO 10899 --- [restartedMain] c.d.s.StudentVacancyAllocaterApplication : Starting StudentVacancyAllocaterApplication using Java 11.0.10 on localhost.localdomain with PID 10899 (/home/tendaizhou/Source_Code/form-one-registration/target/classes started by tendaizhou in /home/tendaizhou/Source_Code/form-one-registration)
+2021-03-13 16:39:38.728  INFO 10899 --- [restartedMain] c.d.s.StudentVacancyAllocaterApplication : No active profile set, falling back to default profiles: default
+2021-03-13 16:39:38.773  INFO 10899 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-03-13 16:39:38.774  INFO 10899 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-03-13 16:39:39.308  INFO 10899 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-03-13 16:39:39.374  INFO 10899 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 59 ms. Found 7 JPA repository interfaces.
+2021-03-13 16:39:39.795  INFO 10899 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8788 (http)
+2021-03-13 16:39:39.802  INFO 10899 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-03-13 16:39:39.802  INFO 10899 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-03-13 16:39:39.847  INFO 10899 --- [restartedMain] o.a.c.c.C.[.[localhost].[/regSystem]     : Initializing Spring embedded WebApplicationContext
+2021-03-13 16:39:39.847  INFO 10899 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1073 ms
+2021-03-13 16:39:40.095  INFO 10899 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-03-13 16:39:40.185  INFO 10899 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-03-13 16:39:40.793  INFO 10899 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-03-13 16:39:40.826  INFO 10899 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-03-13 16:39:41.182  INFO 10899 --- [actor-system-akka.actor.default-dispatcher-5] akka.event.slf4j.Slf4jLogger             : Slf4jLogger started
+2021-03-13 16:39:41.650  WARN 10899 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-03-13 16:39:41.731  INFO 10899 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-13 16:39:41.835  WARN 10899 --- [restartedMain] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2021-03-13 16:39:41.947  INFO 10899 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8788 (http) with context path '/regSystem'
+2021-03-13 16:39:41.957  INFO 10899 --- [restartedMain] c.d.s.StudentVacancyAllocaterApplication : Started StudentVacancyAllocaterApplication in 3.564 seconds (JVM running for 3.893)
+2021-03-13 16:41:48.633  INFO 10899 --- [http-nio-8788-exec-1] o.a.c.c.C.[.[localhost].[/regSystem]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-03-13 16:41:48.633  INFO 10899 --- [http-nio-8788-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-03-13 16:41:48.635  INFO 10899 --- [http-nio-8788-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-03-13 16:41:48.913  INFO 10899 --- [actor-system-akka.actor.default-dispatcher-5] akka.actor.DeadLetterActorRef            : Message [com.dsw.studentvacancyallocater.models.Deadline] from Actor[akka://actor-system/user/$a#103196584] to Actor[akka://actor-system/deadLetters] was not delivered. [1] dead letters encountered. If this is not an expected behavior then Actor[akka://actor-system/deadLetters] may have terminated unexpectedly. This logging can be turned off or adjusted with configuration settings 'akka.log-dead-letters' and 'akka.log-dead-letters-during-shutdown'.
+2021-03-13 16:42:21.503  INFO 10899 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-03-13 16:42:21.506  INFO 10899 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-03-13 16:42:21.508  INFO 10899 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-03-13 16:42:21.517  INFO 10899 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

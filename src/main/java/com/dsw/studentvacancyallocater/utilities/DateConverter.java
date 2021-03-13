@@ -1,5 +1,7 @@
 package com.dsw.studentvacancyallocater.utilities;
 
-public class DateConverter {
+import com.dsw.studentvacancyallocater.dtos.DeadlineDTO;
+import com.dsw.studentvacancyallocater.models.Deadline;
 
+public class DateConverter {
 }
