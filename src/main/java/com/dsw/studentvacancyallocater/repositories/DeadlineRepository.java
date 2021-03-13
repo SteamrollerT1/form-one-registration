@@ -15,9 +15,9 @@ public interface DeadlineRepository extends JpaRepository<Deadline, Long> {
 
 
     @Query("SELECT d FROM Deadline d WHERE d.id = :id ORDER BY d.dateCreated ASC")
-    List<Deadline> getById(@RequestParam("id") long id);
+    Deadline getById(@RequestParam("id") long id);
 
 
     @Query("SELECT d FROM Deadline d JOIN d.school s WHERE s.id = :schoolId ORDER BY d.dateCreated ASC")
-    List<Deadline> getBySchoolId(@RequestParam("schoolId") long schoolId);
+    Deadline getBySchoolId(@RequestParam("schoolId") long schoolId);
 }

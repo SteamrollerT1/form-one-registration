@@ -26,6 +26,10 @@ public class DeadlineActor extends AbstractActor {
         sender().tell(deadlineRepository.getById(getDeadline.getId()), self());
     }
 
+    void getDeadlineBySchoolId(GetDeadlineBySchoolId getDeadlineBySchoolId) {
+        sender().tell(deadlineRepository.getBySchoolId(getDeadlineBySchoolId.getSchoolId()), self());
+    }
+
     //message types
     interface Command {
     }
@@ -41,12 +45,18 @@ public class DeadlineActor extends AbstractActor {
         private final long id;
     }
 
+    @Data
+    public static class GetDeadlineBySchoolId implements Command {
+        private final long schoolId;
+    }
+
 
     @Override
     public Receive createReceive() {
         return receiveBuilder()
                 .match(UpdateDeadlinePeriod.class, this::updateDeadLinePeriod)
                 .match(GetDeadline.class, this::getDeadline)
+                .match(GetDeadlineBySchoolId.class, this::getDeadlineBySchoolId)
                 .build();
     }
 }
