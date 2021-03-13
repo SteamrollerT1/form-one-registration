@@ -1,5 +1,6 @@
 package com.dsw.studentvacancyallocater.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -16,6 +17,7 @@ public class School extends AbstractEntity {
     private int maxUnitsAllowed;
     private int applicantCapacity;
 
+    @JsonIgnore
     @OneToOne(targetEntity = Deadline.class, mappedBy = "school", cascade = CascadeType.ALL)
     @PrimaryKeyJoinColumn
     private Deadline deadline;
