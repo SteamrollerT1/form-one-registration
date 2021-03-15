@@ -22,4 +22,7 @@ public class School extends AbstractEntity {
     @PrimaryKeyJoinColumn
     private Deadline deadline;
 
+    private String username;
+    private String password;
+
 }

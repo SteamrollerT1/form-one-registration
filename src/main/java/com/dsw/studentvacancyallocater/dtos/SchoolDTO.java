@@ -13,4 +13,7 @@ public class SchoolDTO {
     private String status;
     private int maxUnitsAllowed;
     private int applicantCapacity;
+
+    private String username;
+    private String password;
 }

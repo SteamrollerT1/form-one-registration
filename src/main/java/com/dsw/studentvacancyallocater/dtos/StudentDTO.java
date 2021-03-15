@@ -10,4 +10,7 @@ public class StudentDTO {
     private String surname;
     private int units;
     private List<String> preferredSchoolIds;
+
+    private String username;
+    private String password;
 }

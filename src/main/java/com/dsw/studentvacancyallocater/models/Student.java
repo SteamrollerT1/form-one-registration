@@ -24,5 +24,6 @@ public class Student extends AbstractEntity {
     )
     private List<School> schools;
 
-
+    private String username;
+    private String password;
 }
